@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tailwind CSS Responsive Design - Complete Guide</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 p-4 md:p-8">
+  <div class="max-w-6xl mx-auto">
+    <!-- Header Section -->
+    <header class="mb-8">
+      <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-800">
+        Tailwind CSS Responsive Design
+      </h1>
+      <p class="mt-2 text-center text-gray-600">
+        All concepts together in one document
+      </p>
+    </header>
+
+    <!-- 1. Breakpoint System Explanation -->
+    <section class="mb-12 p-6 bg-white rounded-lg shadow">
+      <h2 class="text-xl font-semibold mb-4">1. Breakpoint System</h2>
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-4 text-center">
+        <div class="bg-blue-100 p-3 rounded">
+          <div class="font-medium">sm</div>
+          <div class="text-sm">≥640px</div>
+        </div>
+        <div class="bg-green-100 p-3 rounded">
+          <div class="font-medium">md</div>
+          <div class="text-sm">≥768px</div>
+        </div>
+        <div class="bg-yellow-100 p-3 rounded">
+          <div class="font-medium">lg</div>
+          <div class="text-sm">≥1024px</div>
+        </div>
+        <div class="bg-purple-100 p-3 rounded">
+          <div class="font-medium">xl</div>
+          <div class="text-sm">≥1280px</div>
+        </div>
+        <div class="bg-red-100 p-3 rounded">
+          <div class="font-medium">2xl</div>
+          <div class="text-sm">≥1536px</div>
+        </div>
+      </div>
+      <p class="mt-4 text-gray-600">
+        Mobile-first approach: unprefixed classes apply to all screens, prefixed classes override at that breakpoint and larger.
+      </p>
+    </section>
+
+    <!-- 2. Responsive Text Sizing -->
+    <section class="mb-12 p-6 bg-white rounded-lg shadow">
+      <h2 class="text-xl font-semibold mb-4">2. Responsive Text</h2>
+      <p class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-700">
+        This text scales up at each breakpoint. Resize your browser to see the effect.
+      </p>
+      <div class="mt-4 p-4 bg-gray-100 rounded">
+        <code class="text-xs">
+          class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl"
+        </code>
+      </div>
+    </section>
+
+    <!-- 3. Responsive Layout (Grid) -->
+    <section class="mb-12 p-6 bg-white rounded-lg shadow">
+      <h2 class="text-xl font-semibold mb-4">3. Responsive Grid</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div class="bg-blue-200 p-4 rounded text-center">Item 1</div>
+        <div class="bg-blue-200 p-4 rounded text-center">Item 2</div>
+        <div class="bg-blue-200 p-4 rounded text-center">Item 3</div>
+        <div class="bg-blue-200 p-4 rounded text-center">Item 4</div>
+      </div>
+      <div class="mt-4 p-4 bg-gray-100 rounded">
+        <code class="text-xs">
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+        </code>
+      </div>
+    </section>
+
+    <!-- 4. Responsive Flex Direction -->
+    <section class="mb-12 p-6 bg-white rounded-lg shadow">
+      <h2 class="text-xl font-semibold mb-4">4. Flex Direction</h2>
+      <div class="flex flex-col md:flex-row gap-4">
+        <div class="bg-green-200 p-4 rounded flex-1 text-center">Left Section</div>
+        <div class="bg-green-200 p-4 rounded flex-1 text-center">Right Section</div>
+      </div>
+      <div class="mt-4 p-4 bg-gray-100 rounded">
+        <code class="text-xs">
+          class="flex flex-col md:flex-row gap-4"
+        </code>
+      </div>
+    </section>
+
+    <!-- 5. Show/Hide Elements -->
+    <section class="mb-12 p-6 bg-white rounded-lg shadow">
+      <h2 class="text-xl font-semibold mb-4">5. Conditional Visibility</h2>
+      <div class="space-y-2">
+        <div class="block sm:hidden bg-red-200 p-2 rounded text-center">
+          Visible only on mobile (sm:hidden)
+        </div>
+        <div class="hidden sm:block md:hidden bg-blue-200 p-2 rounded text-center">
+          Visible only on sm screens (640-767px)
+        </div>
+        <div class="hidden md:block lg:hidden bg-green-200 p-2 rounded text-center">
+          Visible only on md screens (768-1023px)
+        </div>
+        <div class="hidden lg:block bg-purple-200 p-2 rounded text-center">
+          Visible on lg screens and up (≥1024px)
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Responsive Spacing -->
+    <section class="mb-12 p-6 bg-white rounded-lg shadow">
+      <h2 class="text-xl font-semibold mb-4">6. Responsive Spacing</h2>
+      <div class="m-2 sm:m-4 md:m-6 lg:m-8 p-2 sm:p-4 md:p-6 lg:p-8 bg-yellow-100 rounded">
+        <p>This element's padding and margin increase at each breakpoint.</p>
+        <div class="mt-4 p-4 bg-gray-100 rounded">
+          <code class="text-xs">
+            class="m-2 sm:m-4 md:m-6 lg:m-8 p-2 sm:p-4 md:p-6 lg:p-8"
+          </code>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Responsive Navigation -->
+    <section class="mb-12 p-6 bg-white rounded-lg shadow">
+      <h2 class="text-xl font-semibold mb-4">7. Responsive Navigation</h2>
+      <nav class="flex flex-col sm:flex-row items-center justify-between bg-gray-800 text-white rounded-lg p-4">
+        <div class="text-xl font-bold mb-4 sm:mb-0">Logo</div>
+        <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 text-center">
+          <a href="#" class="hover:text-yellow-300">Home</a>
+          <a href="#" class="hover:text-yellow-300">About</a>
+          <a href="#" class="hover:text-yellow-300">Services</a>
+          <a href="#" class="hover:text-yellow-300">Contact</a>
+        </div>
+      </nav>
+    </section>
+
+    <!-- 8. Responsive Card -->
+    <section class="mb-12 p-6 bg-white rounded-lg shadow">
+      <h2 class="text-xl font-semibold mb-4">8. Responsive Card</h2>
+      <div class="max-w-md mx-auto sm:max-w-xl md:max-w-2xl lg:max-w-4xl">
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
+          <div class="md:flex">
+            <div class="md:flex-shrink-0">
+              <div class="h-48 w-full bg-blue-300 md:h-full md:w-48 flex items-center justify-center">
+                <span class="text-white font-bold">Image</span>
+              </div>
+            </div>
+            <div class="p-8">
+              <h2 class="text-xl font-semibold">Responsive Card Example</h2>
+              <p class="mt-2 text-gray-600">This card changes from vertical to horizontal layout on medium screens and up.</p>
+              <button class="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+                Learn More
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Responsive Form -->
+    <section class="mb-12 p-6 bg-white rounded-lg shadow">
+      <h2 class="text-xl font-semibold mb-4">9. Responsive Form</h2>
+      <form class="space-y-4 md:space-y-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block mb-1 font-medium">First Name</label>
+            <input type="text" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500">
+          </div>
+          <div>
+            <label class="block mb-1 font-medium">Last Name</label>
+            <input type="text" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500">
+          </div>
+        </div>
+        <div>
+          <label class="block mb-1 font-medium">Email</label>
+          <input type="email" class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500">
+        </div>
+        <div>
+          <label class="block mb-1 font-medium">Message</label>
+          <textarea class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500" rows="3"></textarea>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <button class="w-full sm:w-auto px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+            Submit
+          </button>
+          <button class="w-full sm:w-auto px-6 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300">
+            Cancel
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <!-- 10. Responsive Table -->
+    <section class="mb-12 p-6 bg-white rounded-lg shadow">
+      <h2 class="text-xl font-semibold mb-4">10. Responsive Table</h2>
+      <div class="overflow-x-auto">
+        <table class="min-w-full divide-y divide-gray-200">
+          <thead class="bg-gray-50">
+            <tr>
+              <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Name</th>
+              <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase hidden sm:table-cell">Email</th>
+              <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase hidden md:table-cell">Status</th>
+              <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Action</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y divide-gray-200">
+            <tr>
+              <td class="px-4 py-3 whitespace-nowrap">John Doe</td>
+              <td class="px-4 py-3 whitespace-nowrap hidden sm:table-cell">john@example.com</td>
+              <td class="px-4 py-3 whitespace-nowrap hidden md:table-cell">Active</td>
+              <td class="px-4 py-3 whitespace-nowrap">
+                <button class="text-blue-600 hover:text-blue-800">View</button>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 whitespace-nowrap">Jane Smith</td>
+              <td class="px-4 py-3 whitespace-nowrap hidden sm:table-cell">jane@example.com</td>
+              <td class="px-4 py-3 whitespace-nowrap hidden md:table-cell">Inactive</td>
+              <td class="px-4 py-3 whitespace-nowrap">
+                <button class="text-blue-600 hover:text-blue-800">View</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-12 p-6 bg-gray-800 text-white rounded-lg">
+      <p class="text-center">Tailwind CSS Responsive Design - All Concepts Together</p>
+    </footer>
+  </div>
+</body>
+</html>

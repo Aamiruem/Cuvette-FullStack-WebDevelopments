@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind CSS Demo</title>
+    <!-- Using Tailwind via CDN (for development only) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles can go here */
+        body {
+            background-color: #1f2937; /* bg-gray-800 */
+        }
+    </style>
+</head>
+<body class="min-h-screen p-4">
+    <!-- Spacing Demo -->
+    <div class="max-w-2xl mx-auto">
+        <h1 class="text-2xl font-bold mb-4 p-2 bg-gray-700 rounded-lg">Spacing in Tailwind CSS</h1>
+        <p class="mb-4 p-3 bg-gray-600 rounded">Here we're learning about margin and padding utilities in Tailwind</p>
+        
+        <div class="flex flex-wrap gap-4 mb-6">
+            <button class="px-4 py-2 bg-blue-500 hover:bg-blue-600 rounded transition">
+                Click me
+            </button>
+            <button class="px-4 py-2 bg-green-500 hover:bg-green-600 rounded transition">
+                Share
+            </button>
+        </div>
+
+        <!-- Additional spacing examples -->
+        <div class="space-y-4 p-4 bg-gray-700 rounded-lg">
+            <h2 class="text-xl font-semibold">More Spacing Examples</h2>
+            <div class="p-4 bg-gray-600 rounded">
+                <p class="mb-2">Margin examples:</p>
+                <div class="flex space-x-4">
+                    <div class="m-2 p-2 bg-blue-400">m-2</div>
+                    <div class="mt-4 p-2 bg-blue-400">mt-4</div>
+                    <div class="mx-4 p-2 bg-blue-400">mx-4</div>
+                </div>
+            </div>
+            <div class="p-4 bg-gray-600 rounded">
+                <p class="mb-2">Padding examples:</p>
+                <div class="flex space-x-4">
+                    <div class="p-2 bg-green-400">p-2</div>
+                    <div class="px-4 py-2 bg-green-400">px-4 py-2</div>
+                    <div class="pt-4 pb-2 bg-green-400">pt-4 pb-2</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Tailwind CSS -->
+     <div class="w-1/2 bg-blue-700 text-white p-4">
+         <h1>Aamir Hussain</h1>
+         
+        </div>
+        
+        <div class="w-1/2 bg-blue-700 text-white p-4">
+         <h1>Aamir Hussain</h1>
+        </div>
+
+        <div class="w-1/2 bg-blue-700 text-white p-4">
+         <h1>Aamir Hussain</h1>
+        </div>
+
+        <div class="w-1/2 bg-blue-700 text-white p-4">
+         <h1>Aamir Hussain</h1>
+        </div>
+
+        <hr>
+        <div class="w-1/2 bg-blue-700 text-white p-4">
+             <p class="min-w-48">Web Developer</p>
+        </div>
+</body>
+</html>

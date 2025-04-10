@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind CSS Typography Properties</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="p-8 bg-gray-50">
+    <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow">
+        <h1 class="text-3xl font-bold text-gray-800 mb-6">Tailwind CSS Typography Properties</h1>
+
+        <!-- Font Family -->
+        <section class="mb-8">
+            <h2 class="text-xl font-semibold text-gray-700 mb-4">1. Font Family</h2>
+            <div class="grid grid-cols-3 gap-4">
+                <div class="p-4 border rounded-lg">
+                    <p class="font-sans mb-2">Sans-serif</p>
+                    <code>.font-sans</code>
+                </div>
+                <div class="p-4 border rounded-lg">
+                    <p class="font-serif mb-2">Serif</p>
+                    <code>.font-serif</code>
+                </div>
+                <div class="p-4 border rounded-lg">
+                    <p class="font-mono mb-2">Monospace</p>
+                    <code>.font-mono</code>
+                </div>
+            </div>
+        </section>
+
+        <!-- Font Size -->
+        <section class="mb-8">
+            <h2 class="text-xl font-semibold text-gray-700 mb-4">2. Font Size</h2>
+            <div class="grid grid-cols-3 gap-4">
+                <div class="p-4 border rounded-lg">
+                    <p class="text-xs mb-2">Extra Small (12px)</p>
+                    <code>.text-xs</code>
+                </div>
+                <div class="p-4 border rounded-lg">
+                    <p class="text-sm mb-2">Small (14px)</p>
+                    <code>.text-sm</code>
+                </div>
+                <div class="p-4 border rounded-lg">
+                    <p class="text-base mb-2">Base (16px)</p>
+                    <code>.text-base</code>
+                </div>
+                <div class="p-4 border rounded-lg">
+                    <p class="text-lg mb-2">Large (18px)</p>
+                    <code>.text-lg</code>
+                </div>
+                <div class="p-4 border rounded-lg">
+                    <p class="text-xl mb-2">Extra Large (20px)</p>
+                    <code>.text-xl</code>
+                </div>
+                <div class="p-4 border rounded-lg">
+                    <p class="text-2xl mb-2">2XL (24px)</p>
+                    <code>.text-2xl</code>
+                </div>
+            </div>
+        </section>
+
+        <!-- Font Weight -->
+        <section class="mb-8">
+            <h2 class="text-xl font-semibold text-gray-700 mb-4">3. Font Weight</h2>
+            <div class="grid grid-cols-4 gap-4">
+                <div class="p-4 border rounded-lg">
+                    <p class="font-thin mb-2">Thin (100)</p>
+                    <code>.font-thin</code>
+                </div>
+                <div class="p-4 border rounded-lg">
+                    <p class="font-light mb-2">Light (300)</p>
+                    <code>.font-light</code>
+                </div>
+                <div class="p-4 border rounded-lg">
+                    <p class="font-normal mb-2">Normal (400)</p>
+                    <code>.font-normal</code>
+                </div>
+                <div class="p-4 border rounded-lg">
+                    <p class="font-bold mb-2">Bold (700)</p>
+                    <code>.font-bold</code>
+                </div>
+            </div>
+        </section>
+
+        <!-- Text Alignment -->
+        <section class="mb-8">
+            <h2 class="text-xl font-semibold text-gray-700 mb-4">4. Text Alignment</h2>
+            <div class="grid grid-cols-3 gap-4">
+                <div class="p-4 border rounded-lg">
+                    <p class="text-left mb-2">Left-aligned</p>
+                    <code>.text-left</code>
+                </div>
+                <div class="p-4 border rounded-lg">
+                    <p class="text-center mb-2">Center-aligned</p>
+                    <code>.text-center</code>
+                </div>
+                <div class="p-4 border rounded-lg">
+                    <p class="text-right mb-2">Right-aligned</p>
+                    <code>.text-right</code>
+                </div>
+            </div>
+        </section>
+
+        <!-- Text Decoration -->
+        <section class="mb-8">
+            <h2 class="text-xl font-semibold text-gray-700 mb-4">5. Text Decoration</h2>
+            <div class="grid grid-cols-3 gap-4">
+                <div class="p-4 border rounded-lg">
+                    <p class="underline mb-2">Underlined</p>
+                    <code>.underline</code>
+                </div>
+                <div class="p-4 border rounded-lg">
+                    <p class="line-through mb-2">Strikethrough</p>
+                    <code>.line-through</code>
+                </div>
+                <div class="p-4 border rounded-lg">
+                    <p class="no-underline mb-2">No decoration</p>
+                    <code>.no-underline</code>
+                </div>
+            </div>
+        </section>
+
+        <!-- Example Usage -->
+        <section class="mb-8">
+            <h2 class="text-xl font-semibold text-gray-700 mb-4">Example Usage</h2>
+            <div class="p-4 bg-gray-100 rounded-lg">
+                <h3 class="text-2xl font-bold text-blue-600 mb-2">Hello World</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    This paragraph uses <code>.text-gray-700</code> for color and <code>.leading-relaxed</code> for line
+                    height.
+                </p>
+            </div>
+        </section>
+
+        <footer class="text-sm text-gray-500 mt-8">
+            <p>Tip: Customize these in <code>tailwind.config.js</code> under the <code>theme.extend</code> key.</p>
+        </footer>
+    </div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Tailwind CSS Typography</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        custom: ['Comic Sans MS', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+      .custom-hyphens {
+        hyphens: auto;
+      }
+    }
+  </style>
+</head>
+
+<body class="p-8 bg-gray-50 min-h-screen">
+    <div class="max-w-6xl mx-auto bg-white p-8 rounded-xl shadow-lg">
+        <h1 class="text-4xl font-extrabold text-center text-gray-900 mb-2 tracking-tight">
+            Complete Tailwind CSS Typography
+        </h1>
+        <p class="text-center text-lg text-gray-600 mb-12">
+            All typography utilities demonstrated with examples
+        </p>
+
+        <!-- Font Family -->
+        <section class="mb-12 p-6 bg-gray-50 rounded-lg">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4 border-b pb-2">Font Family</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="p-4 border rounded-lg bg-white">
+                    <p class="font-sans text-lg mb-3">The quick brown fox jumps over the lazy dog</p>
+                    <code class="bg-gray-100 p-1 rounded text-sm">.font-sans</code>
+                    <p class="text-sm text-gray-500 mt-2">Default system sans-serif</p>
+                </div>
+                <div class="p-4 border rounded-lg bg-white">
+                    <p class="font-serif text-lg mb-3">The quick brown fox jumps over the lazy dog</p>
+                    <code class="bg-gray-100 p-1 rounded text-sm">.font-serif</code>
+                    <p class="text-sm text-gray-500 mt-2">Default system serif</p>
+                </div>
+                <div class="p-4 border rounded-lg bg-white">
+                    <p class="font-mono text-lg mb-3">The quick brown fox jumps over the lazy dog</p>
+                    <code class="bg-gray-100 p-1 rounded text-sm">.font-mono</code>
+                    <p class="text-sm text-gray-500 mt-2">Monospace font stack</p>
+                </div>
+            </div>
+            <div class="mt-6 p-4 border rounded-lg bg-white">
+                <p class="font-custom text-lg mb-3">Custom font family (configured in tailwind.config.js)</p>
+                <code class="bg-gray-100 p-1 rounded text-sm">.font-custom</code>
+            </div>
+        </section>
+
+        <!-- Font Size -->
+        <section class="mb-12 p-6 bg-gray-50 rounded-lg">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4 border-b pb-2">Font Size</h2>
+            <div class="grid md:grid-cols-4 gap-4">
+                <div class="p-3 border rounded-lg bg-white">
+                    <p class="text-xs mb-2">Extra small text</p>
+                    <code class="bg-gray-100 p-1 rounded text-xs">.text-xs</code>
+                    <p class="text-xs text-gray-500 mt-1">0.75rem (12px)</p>
+                </div>
+                <div class="p-3 border rounded-lg bg-white">
+                    <p class="text-sm mb-2">Small text</p>
+                    <code class="bg-gray-100 p-1 rounded text-xs">.text-sm</code>
+                    <p class="text-xs text-gray-500 mt-1">0.875rem (14px)</p>
+                </div>
+                <div class="p-3 border rounded-lg bg-white">
+                    <p class="text-base mb-2">Base text</p>
+                    <code class="bg-gray-100 p-1 rounded text-xs">.text-base</code>
+                    <p class="text-xs text-gray-500 mt-1">1rem (16px)</p>
+                </div>
+                <div class="p-3 border rounded-lg bg-white">
+                    <p class="text-lg mb-2">Large text</p>
+                    <code class="bg-gray-100 p-1 rounded text-xs">.text-lg</code>
+                    <p class="text-xs text-gray-500 mt-1">1.125rem (18px)</p>
+                </div>
+                <div class="p-3 border rounded-lg bg-white">
+                    <p class="text-xl mb-2">Extra large text</p>
+                    <code class="bg-gray-100 p-1 rounded text-xs">.text-xl</code>
+                    <p class="text-xs text-gray-500 mt-1">1.25rem (20px)</p>
+                </div>
+                <div class="p-3 border rounded-lg bg-white">
+                    <p class="text-2xl mb-2">2XL text</p>
+                    <code class="bg-gray-100 p-1 rounded text-xs">.text-2xl</code>
+                    <p class="text-xs text-gray-500 mt-1">1.5rem (24px)</p>
+                </div>
+                <div class="p-3 border rounded-lg bg-white">
+                    <p class="text-3xl mb-2">3XL text</p>
+                    <code class="bg-gray-100 p-1 rounded text-xs">.text-3xl</code>
+                    <p class="text-xs text-gray-500 mt-1">1.875rem (30px)</p>
+                </div>
+                <div class="p-3 border rounded-lg bg-white">
+                    <p class="text-4xl mb-2">4XL text</p>
+                    <code class="bg-gray-100 p-1 rounded text-xs">.text-4xl</code>
+                    <p class="text-xs text-gray-500 mt-1">2.25rem (36px)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Font Weight -->
+        <section class="mb-12 p-6 bg-gray-50 rounded-lg">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4 border-b pb-2">Font Weight</h2>
+            <div class="grid md:grid-cols-4 gap-4">
+                <div class="p-3 border rounded-lg bg-white">
+                    <p class="font-thin mb-2">Thin weight text</p>
+                    <code class="bg-gray-100 p-1 rounded text-xs">.font-thin</code>
+                    <p class="text-xs text-gray-500 mt-1">100</p>
+                </div>
+                <div class="p-3 border rounded-lg bg-white">
+                    <p class="font-extralight mb-2">Extra light text</p>
+                    <code class="bg-gray-100 p-1 rounded text-xs">.font-extralight</code>
+                    <p class="text-xs text-gray-500 mt-1">200</p>
+                </div>
+                <div class="p-3 border rounded-lg bg-white">
+                    <p class="font-light mb-2">Light text</p>
+                    <code class="bg-gray-100 p-1 rounded text-xs">.font-light</code>
+                    <p class="text-xs text-gray-500 mt-1">300</p>
+                </div>
+                <div class="p-3 border rounded-lg bg-white">
+                    <p class="font-normal mb-2">Normal text</p>
+                    <code class="bg-gray-100 p-1 rounded text-xs">.font-normal</code>
+                    <p class="text-xs text-gray-500 mt-1">400</p>
+                </div>
+                <div class="p-3 border rounded-lg bg-white">
+                    <p class="font-medium mb-2">Medium text</p>
+                    <code class="bg-gray-100 p-1 rounded text-xs">.font-medium</code>
+                    <p class="text-xs text-gray-500 mt-1">500</p>
+                </div>
+                <div class="p-3 border rounded-lg bg-white">
+                    <p class="font-semibold mb-2">Semibold text</p>
+                    <code class="bg-gray-100 p-1 rounded text-xs">.font-semibold</code>
+                    <p class="text-xs text-gray-500 mt-1">600</p>
+                </div>
+                <div class="p-3 border rounded-lg bg-white">
+                    <p class="font-bold mb-2">Bold text</p>
+                    <code class="bg-gray-100 p-1 rounded text-xs">.font-bold</code>
+                    <p class="text-xs text-gray-500 mt-1">700</p>
+                </div>
+                <div class="p-3 border rounded-lg bg-white">
+                    <p class="font-extrabold mb-2">Extra bold text</p>
+                    <code class="bg-gray-100 p-1 rounded text-xs">.font-extrabold</code>
+                    <p class="text-xs text-gray-500 mt-1">800</p>
+                </div>
+                <div class="p-3 border rounded-lg bg-white">
+                    <p class="font-black mb-2">Black weight text</p>
+                    <code class="bg-gray-100 p-1 rounded text-xs">.font-black</code>
+                    <p class="text-xs text-gray-500 mt-1">900</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Letter Spacing -->
+        <section class="mb-12 p-6 bg-gray-50 rounded-lg">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4 border-b pb-2">Letter Spacing (Tracking)</h2>
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="p-3 border rounded-lg bg-white">
+                    <p class="tracking-tighter text-lg mb-2">Tighter spacing</p>
+                    <code class="bg-gray-100 p-1 rounded text-xs">.tracking-tighter</code>
+                    <p class="text-xs text-gray-500 mt-1">-0.05em</p>
+                </div>
+                <div class="p-3 border rounded-lg bg-white">
+                    <p class="tracking-tight text-lg mb-2">Tight spacing</p>
+                    <code class="bg-gray-100 p-1 rounded text-xs">.tracking-tight</code>
+                    <p class="text-xs text-gray-500 mt-1">-0.025em</p>
+                </div>
+                <div class="p-3 border rounded-lg bg-white">
+                    <p class="tracking-normal text-lg mb-2">Normal spacing</p>
+                    <code class="bg-gray-100 p-1 rounded text-xs">.tracking-normal</code>
+                    <p class="text-xs text-gray-500 mt-1">0em</p>
+                </div>
+                <div class="p-3 border rounded-lg bg-white">
+                    <p class="tracking-wide text-lg mb-2">Wide spacing</p>
+                    <code class="bg-gray-100 p-1 rounded text-xs">.tracking-wide</code>
+                    <p class="text-xs text-gray-500 mt-1">0.025em</p>
+                </div>
+                <div class="p-3 border rounded-lg bg-white">
+                    <p class="tracking-wider text-lg mb-2">Wider spacing</p>
+                    <code class="bg-gray-100 p-1 rounded text-xs">.tracking-wider</code>
+                    <p class="text-xs text-gray-500 mt-1">0.05em</p>
+                </div>
+                <div class="p-3 border rounded-lg bg-white">
+                    <p class="tracking-widest text-lg mb-2">Widest spacing</p>
+                    <code class="bg-gray-100 p-1 rounded text-xs">.tracking-widest</code>
+                    <p class="text-xs text-gray-500 mt-1">0.1em</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Line Height -->
+        <section class="mb-12 p-6 bg-gray-50 rounded-lg">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4 border-b pb-2">Line Height (Leading)</h2>
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="p-3 border rounded-lg bg-white">
+                    <p class="leading-none mb-2 border-b pb-2">This text has tight line height. Notice how the lines are
+                        close together. This is useful for headings.</p>
+                    <code class="bg-gray-100 p-1 rounded text-xs">.leading-none</code>
+                    <p class="text-xs text-gray-500 mt-1">1</p>
+                </div>
+                <div class="p-3 border rounded-lg bg-white">
+                    <p class="leading-tight mb-2 border-b pb-2">This text has tight line height. Slightly more than
+                        none. Good for compact paragraphs.</p>
+                    <code class="bg-gray-100 p-1 rounded text-xs">.leading-tight</code>
+                    <p class="text-xs text-gray-500 mt-1">1.25</p>
+                </div>
+                <div class="p-3 border rounded-lg bg-white">
+                    <p class="leading-snug mb-2 border-b pb-2">This text has snug line height. A comfortable reading
+                        height for most text. Balanced spacing.</p>
+                    <code class="bg-gray-100 p-1 rounded text-xs">.leading-snug</code>
+                    <p class="text-xs text-gray-500 mt-1">1.375</p>
+                </div>
+                <div class="p-3 border rounded-lg bg-white">
+                    <p class="leading-normal mb-2 border-b pb-2">This text has normal line height. The default line
+                        spacing. Works well for body text in most cases.</p>
+                    <code class="bg-gray-100 p-1 rounded text-xs">.leading-normal</code>
+                    <p class="text-xs text-gray-500 mt-1">1.5</p>
+                </div>
+                <div class="p-3 border rounded-lg bg-white">
+                    <p class="leading-relaxed mb-2 border-b pb-2">This text has relaxed line height. More breathing room
+                        between lines. Good for long-form content.</p>
+                    <code class="bg-gray-100 p-1 rounded text-xs">.leading-relaxed</code>
+                    <p class="text-xs text-gray-500 mt-1">1.625</p>
+                </div>
+                <div class="p-3 border rounded-lg bg-white">
+                    <p class="leading-loose mb-2 border-b pb-2">This text has loose line height. Maximum spacing between
+                        lines. Use sparingly for special effects.</p>
+                    <code class="bg-gray-100 p-1 rounded text-xs">.leading-loose</code>
+                    <p class="text-xs text-gray-500 mt-1">2</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Text Alignment -->
+        <section class="mb-12 p-6 bg-gray-50 rounded-lg">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4 border-b pb-2">Text Alignment</h2>
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="p-3 border rounded-lg bg-white">
+                    <p class="text-left border-b pb-2">This text is left-aligned (default for LTR languages). The text
+                        starts at the left edge.</p>
+                    <code class="bg-gray-100 p-1 rounded text-xs">.text-left</code>
+                </div>
+                <div class="p-3 border rounded-lg bg-white">
+                    <p class="text-center border-b pb-2">This text is center-aligned. Each line is centered within its
+                        container.</p>
+                    <code class="bg-gray-100 p-1 rounded text-xs">.text-center</code>
+                </div>
+                <div class="p-3 border rounded-lg bg-white">
+                    <p class="text-right border-b pb-2">This text is right-aligned. The text ends at the right edge of
+                        the container.</p>
+                    <code class="bg-gray-100 p-1 rounded text-xs">.text-right</code>
+                </div>
+                <div class="p-3 border rounded-lg bg-white">
+                    <p class="text-justify border-b pb-2">This text is justified. The text expands to fill the full
+                        width, creating even edges on both sides. Useful for newspaper-style columns.</p>
+                    <code class="bg-gray-100 p-1 rounded text-xs">.text-justify</code>
+                </div>
+                <div class="p-3 border rounded-lg bg-white">
+                    <p class="text-start border-b pb-2">This text uses start alignment (respects text direction). For
+                        LTR, same as left.</p>
+                    <code class="bg-gray-100 p-1 rounded text-xs">.text-start</code>
+                </div>
+                <div class="p-3 border rounded-lg bg-white">
+                    <p class="text-end border-b pb-2">This text uses end alignment (respects text direction). For LTR,
+                        same as right.</p>
+                    <code class="bg-gray-100 p-1 rounded text-xs">.text-end</code>
+                </div>
+            </div>
+        </section>
+
+        <!-- Text Decoration -->
+        <section class="mb-12 p-6 bg-gray-50 rounded-lg">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4 border-b pb-2">Text Decoration</h2>
+            <div class="grid md:grid-cols-3

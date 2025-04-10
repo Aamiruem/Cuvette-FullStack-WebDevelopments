@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .error-message {
+            color: #dc3545;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+        .table {
+            margin-top: 2rem;
+        }
+        .grand-total {
+            font-weight: bold;
+            background-color: #f8f9fa;
+        }
+        #item-list {
+            min-height: 100px;
+        }
+        .empty-state {
+            text-align: center;
+            padding: 2rem;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mb-4">Shopping List</h1>
+        
+        <div class="card mb-4">
+            <div class="card-body">
+                <form id="shopping-form">
+                    <div class="row">
+                        <div class="col-md-6 form-group">
+                            <label for="item-name-input" class="form-label">Item Name</label>
+                            <input type="text" class="form-control" id="item-name-input" placeholder="Enter item name">
+                            <div class="error-message" id="name-error">Please enter an item name</div>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label for="item-price-input" class="form-label">Price (₹)</label>
+                            <input type="number" class="form-control" id="item-price-input" placeholder="Enter price" min="0" step="0.01">
+                            <div class="error-message" id="price-error">Please enter a valid price</div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-2">Add Item</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">Your Shopping List</h2>
+                
+                <div id="empty-state" class="empty-state">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4076/4076478.png" width="80" alt="Empty cart" class="mb-3">
+                    <h4>Your shopping list is empty</h4>
+                    <p>Add items using the form above</p>
+                </div>
+                
+                <div id="item-list">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Sr. No.</th>
+                                <th>Item Name</th>
+                                <th>Price (₹)</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="items-table-body">
+                            <!-- Items will be added here dynamically -->
+                        </tbody>
+                        <tfoot>
+                            <tr class="grand-total">
+                                <td colspan="2">Grand Total</td>
+                                <td data-ns-test="grandTotal">0.00</td>
+                                <td></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const shoppingForm = document.getElementById('shopping-form');
+            const itemNameInput = document.getElementById('item-name-input');
+            const itemPriceInput = document.getElementById('item-price-input');
+            const itemsTableBody = document.getElementById('items-table-body');
+            const grandTotalCell = document.querySelector('[data-ns-test="grandTotal"]');
+            const emptyState = document.getElementById('empty-state');
+            const nameError = document.getElementById('name-error');
+            const priceError = document.getElementById('price-error');
+            
+            let items = [];
+            
+            // Initialize with empty table and grand total
+            updateTable();
+            
+            // Form submission handler
+            shoppingForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Reset error states
+                nameError.style.display = 'none';
+                priceError.style.display = 'none';
+                itemNameInput.classList.remove('is-invalid');
+                itemPriceInput.classList.remove('is-invalid');
+                
+                // Validate inputs
+                const name = itemNameInput.value.trim();
+                const price = parseFloat(itemPriceInput.value);
+                
+                let isValid = true;
+                
+                if (!name) {
+                    nameError.style.display = 'block';
+                    itemNameInput.classList.add('is-invalid');
+                    isValid = false;
+                }
+                
+                if (isNaN(price) || price <= 0) {
+                    priceError.style.display = 'block';
+                    itemPriceInput.classList.add('is-invalid');
+                    isValid = false;
+                }
+                
+                if (!isValid) return;
+                
+                // Add new item
+                const newItem = {
+                    id: Date.now(), // Unique ID for each item
+                    index: items.length + 1,
+                    name: name,
+                    price: price.toFixed(2)
+                };
+                
+                items.push(newItem);
+                
+                // Clear form
+                itemNameInput.value = '';
+                itemPriceInput.value = '';
+                itemNameInput.focus();
+                
+                // Update UI
+                updateTable();
+                
+                // Show success feedback
+                showAlert('Item added successfully!', 'success');
+            });
+            
+            // Function to update the table
+            function updateTable() {
+                // Clear existing rows
+                itemsTableBody.innerHTML = '';
+                
+                // Add all items
+                items.forEach((item, index) => {
+                    const row = createTableRow(item, index);
+                    itemsTableBody.appendChild(row);
+                });
+                
+                // Update grand total
+                const total = items.reduce((sum, item) => sum + parseFloat(item.price), 0);
+                grandTotalCell.textContent = total.toFixed(2);
+                
+                // Show/hide empty state
+                if (items.length === 0) {
+                    emptyState.style.display = 'block';
+                } else {
+                    emptyState.style.display = 'none';
+                }
+            }
+            
+            // Function to create a table row
+            function createTableRow(item, index) {
+                const row = document.createElement('tr');
+                
+                row.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td data-ns-test="item-name">${item.name}</td>
+                    <td data-ns-test="item-price">${item.price}</td>
+                    <td>
+                        <button class="btn btn-sm btn-outline-danger delete-btn" data-id="${item.id}">
+                            Remove
+                        </button>
+                    </td>
+                `;
+                
+                return row;
+            }
+            
+            // Event delegation for delete buttons
+            itemsTableBody.addEventListener('click', function(e) {
+                if (e.target.classList.contains('delete-btn')) {
+                    const itemId = parseInt(e.target.getAttribute('data-id'));
+                    deleteItem(itemId);
+                }
+            });
+            
+            // Function to delete an item
+            function deleteItem(id) {
+                if (confirm('Are you sure you want to remove this item?')) {
+                    items = items.filter(item => item.id !== id);
+                    updateTable();
+                    showAlert('Item removed', 'info');
+                }
+            }
+            
+            // Function to show alert messages
+            function showAlert(message, type) {
+                const alertDiv = document.createElement('div');
+                alertDiv.className = `alert alert-${type} alert-dismissible fade show fixed-top m-3`;
+                alertDiv.innerHTML = `
+                    ${message}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                `;
+                
+                document.body.appendChild(alertDiv);
+                
+                // Auto-dismiss after 3 seconds
+                setTimeout(() => {
+                    alertDiv.classList.remove('show');
+                    setTimeout(() => alertDiv.remove(), 150);
+                }, 3000);
+            }
+        });
+    </script>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let element = document.querySelectorAll();
+
+
+
+
+
+        // Set single style property
+element.style.property = 'value';
+
+// Example:
+element.style.color = 'red';
+
+//Display and Layout
+element.style.display = 'block'; // none, flex, grid, etc.
+element.style.position = 'absolute'; // relative, fixed, sticky
+element.style.visibility = 'hidden'; // visible
+element.style.zIndex = '10';
+element.style.overflow = 'hidden'; // visible, scroll, auto
+
+
+//Box Model
+    element.style.width = '100px';
+element.style.height = '50%';
+element.style.margin = '10px';
+element.style.padding = '20px';
+element.style.border = '1px solid black';
+element.style.boxSizing = 'border-box'; // content-box
+
+
+
+//flex Box
+element.style.display = 'flex';
+element.style.flexDirection = 'column'; // row, row-reverse, column-reverse
+element.style.justifyContent = 'center'; // flex-start, flex-end, space-between, etc.
+element.style.alignItems = 'center'; // stretch, flex-start, flex-end
+element.style.flexWrap = 'wrap'; // nowrap, wrap-reverse
+
+
+
+// Grid
+element.style.display = 'grid';
+element.style.gridTemplateColumns = '1fr 1fr 1fr';
+element.style.gridTemplateRows = '100px auto';
+element.style.gap = '10px';
+
+
+
+//Background
+element.style.backgroundColor = '#ff0000';
+element.style.backgroundImage = 'url("image.jpg")';
+element.style.backgroundSize = 'cover'; // contain, 100% 100%
+element.style.backgroundPosition = 'center center';
+
+
+
+// Text
+element.style.color = 'blue';
+element.style.fontSize = '16px';
+element.style.fontWeight = 'bold'; // normal, 100-900
+element.style.fontFamily = 'Arial, sans-serif';
+element.style.textAlign = 'center'; // left, right, justify
+element.style.lineHeight = '1.5';
+
+
+
+
+// Transform and Transition
+element.style.transform = 'rotate(45deg) scale(1.2)';
+element.style.transition = 'all 0.3s ease';
+element.style.transitionProperty = 'opacity, transform';
+element.style.transitionDuration = '0.5s';
+
+
+
+
+// Border radius
+element.style.borderRadius = '5px';
+element.style.borderTopLeftRadius = '10px';
+
+// Box shadow
+element.style.boxShadow = '2px 2px 5px rgba(0,0,0,0.3)';
+
+// Opacity
+element.style.opacity = '0.5';
+
+// Cursor
+element.style.cursor = 'pointer'; // help, wait, crosshair, etc.
+
+// Pointer events
+element.style.pointerEvents = 'none'; // auto
+
+
+
+
+// Method 1: Individual properties
+element.style.color = 'red';
+element.style.fontSize = '20px';
+
+// Method 2: cssText (overwrites all styles)
+element.style.cssText = 'color: red; font-size: 20px;';
+
+// Method 3: Object.assign
+Object.assign(element.style, {
+  color: 'red',
+  fontSize: '20px',
+  backgroundColor: '#fff'
+});
+
+
+
+// Get all computed styles
+const styles = window.getComputedStyle(element);
+
+// Get specific property
+const color = styles.getPropertyValue('color');
+
+
+
+element.classList.add('active');
+element.classList.remove('inactive');
+
+
+
+
+const style = element.style;
+style.color = 'red';
+style.fontSize = '20px';
+
+
+
+element.style.setProperty('--main-color', '#ff0000');
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Styling Example</title>
+    <style>
+        /* Basic reset for demo purposes */
+        body { margin: 0; padding: 20px; font-family: Arial, sans-serif; }
+        #demoElement {
+            /* Initial styles for the demo element */
+            width: 200px;
+            height: 200px;
+            background-color: #f0f0f0;
+            margin: 20px auto;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        .h1{
+            color: blue;
+            text-align: center;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello Aamir</h1>
+
+
+
+    <div id="demoElement">This is a demo element</div>
+    
+    <script>
+
+        let heading = document.querySelector('h1');
+        heading.classList.add('h1');
+        console.log(heading);
+        heading.style.cssText = 'background-color: red';
+        heading.style.cssFloat = 'left-to-right';
+
+
+        // Correct way to select an element
+        const element = document.getElementById('demoElement');
+        
+        if (element) {
+            // === Layout & Display ===
+            element.style.display = 'block'; // none, flex, grid, etc.
+            element.style.position = 'relative'; // absolute, fixed, sticky
+            element.style.visibility = 'visible'; // hidden
+            element.style.zIndex = '1';
+            element.style.overflow = 'visible'; // hidden, scroll, auto
+
+            // === Box Model ===
+            element.style.width = '300px';
+            element.style.height = '150px';
+            element.style.margin = '20px auto';
+            element.style.padding = '20px';
+            element.style.border = '2px solid #333';
+            element.style.boxSizing = 'border-box'; // content-box
+
+            // === Flexbox ===
+            element.style.display = 'flex';
+            element.style.flexDirection = 'column'; // row, row-reverse, column-reverse
+            element.style.justifyContent = 'center'; // flex-start, flex-end, space-between, etc.
+            element.style.alignItems = 'center'; // stretch, flex-start, flex-end
+            element.style.flexWrap = 'nowrap'; // wrap, wrap-reverse
+
+            // === Background ===
+            element.style.backgroundColor = '#e3f2fd';
+            element.style.backgroundImage = 'linear-gradient(to bottom, #e3f2fd, #bbdefb)';
+            element.style.backgroundSize = 'cover'; // contain, 100% 100%
+            element.style.backgroundPosition = 'center center';
+
+            // === Text ===
+            element.style.color = '#0d47a1';
+            element.style.fontSize = '18px';
+            element.style.fontWeight = 'bold'; // normal, 100-900
+            element.style.fontFamily = 'Arial, sans-serif';
+            element.style.textAlign = 'center'; // left, right, justify
+            element.style.lineHeight = '1.5';
+
+            // === Transform & Transition ===
+            element.style.transform = 'rotate(0deg) scale(1)';
+            element.style.transition = 'all 0.3s ease';
+            element.style.transitionProperty = 'opacity, transform';
+            element.style.transitionDuration = '0.5s';
+
+            // === Border & Effects ===
+            element.style.borderRadius = '8px';
+            element.style.borderTopLeftRadius = '8px';
+            element.style.boxShadow = '3px 3px 8px rgba(0,0,0,0.2)';
+            element.style.opacity = '1';
+            element.style.cursor = 'pointer'; // help, wait, crosshair, etc.
+            element.style.pointerEvents = 'auto'; // none
+
+            // === Alternative Styling Methods ===
+            // Method 2: cssText (overwrites all existing inline styles)
+            // element.style.cssText = 'color: red; font-size: 20px; background: white;';
+
+            // Method 3: Object.assign
+            // Object.assign(element.style, {
+            //   color: 'red',
+            //   fontSize: '20px',
+            //   backgroundColor: '#fff'
+            // });
+
+            // === Class Manipulation ===
+            element.classList.add('active');
+            // element.classList.remove('inactive');
+
+            // === CSS Variables ===
+            element.style.setProperty('--main-color', '#1976d2');
+
+            // === Getting Computed Styles ===
+            const styles = window.getComputedStyle(element);
+            const color = styles.getPropertyValue('color');
+            console.log('Current text color:', color);
+
+            // === Event Listeners for Interaction ===
+            element.addEventListener('mouseenter', () => {
+                element.style.transform = 'scale(1.05)';
+                element.style.boxShadow = '5px 5px 15px rgba(0,0,0,0.3)';
+            });
+
+            element.addEventListener('mouseleave', () => {
+                element.style.transform = 'scale(1)';
+                element.style.boxShadow = '3px 3px 8px rgba(0,0,0,0.2)';
+            });
+
+            element.addEventListener('click', () => {
+                element.style.backgroundColor = '#bbdefb';
+                setTimeout(() => {
+                    element.style.backgroundColor = '#e3f2fd';
+                }, 300);
+            });
+        } else {
+            console.error('Element not found!');
+        }
+    </script>
+</body>
+</html>

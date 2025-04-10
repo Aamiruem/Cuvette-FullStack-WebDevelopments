@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complete Tailwind CSS Guide</title>
+  <!-- Using Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom CSS can still be used alongside Tailwind */
+    .custom-bg {
+      background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    }
+  </style>
+</head>
+<body class="bg-gray-100 font-sans">
+  <div class="container mx-auto px-4 py-8">
+    <!-- Introduction Section -->
+    <section class="mb-12 p-8 bg-white rounded-lg shadow-md">
+      <h1 class="text-3xl font-bold text-gray-800 mb-4">Introduction to Tailwind CSS</h1>
+      <p class="text-gray-600 mb-4">
+        Tailwind is a utility-first CSS framework that lets you build designs directly in your markup.
+        Unlike traditional CSS frameworks, Tailwind doesn't have pre-designed components - instead it provides
+        low-level utility classes that let you build completely custom designs.
+      </p>
+      <div class="bg-blue-50 p-4 rounded border border-blue-200">
+        <h2 class="text-xl font-semibold text-blue-800 mb-2">Key Advantages:</h2>
+        <ul class="list-disc pl-5 space-y-1">
+          <li>No need for huge CSS files with custom CSS</li>
+          <li>Easy to make design changes right in HTML</li>
+          <li>Better developer experience</li>
+          <li>Mobile-first responsive design</li>
+          <li>Polished defaults with customization options</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 1. Background Colors -->
+    <section class="mb-12 p-8 bg-white rounded-lg shadow-md">
+      <h2 class="text-2xl font-bold text-gray-800 mb-6">1. Background Colors & Shades</h2>
+      <p class="text-gray-600 mb-4">
+        Tailwind provides a comprehensive color palette with shades from 50-900 for each color.
+      </p>
+      
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-6">
+        <div class="bg-blue-50 p-4 rounded text-center text-sm">blue-50</div>
+        <div class="bg-blue-100 p-4 rounded text-center text-sm">blue-100</div>
+        <div class="bg-blue-200 p-4 rounded text-center text-sm">blue-200</div>
+        <div class="bg-blue-300 p-4 rounded text-center text-sm">blue-300</div>
+        <div class="bg-blue-400 p-4 rounded text-center text-white text-sm">blue-400</div>
+        <div class="bg-blue-500 p-4 rounded text-center text-white text-sm">blue-500</div>
+        <div class="bg-blue-600 p-4 rounded text-center text-white text-sm">blue-600</div>
+        <div class="bg-blue-700 p-4 rounded text-center text-white text-sm">blue-700</div>
+        <div class="bg-blue-800 p-4 rounded text-center text-white text-sm">blue-800</div>
+        <div class="bg-blue-900 p-4 rounded text-center text-white text-sm">blue-900</div>
+      </div>
+      
+      <div class="p-6 bg-gray-800 text-white rounded-lg">
+        <h3 class="text-xl font-medium mb-3">Custom Background</h3>
+        <p>You can combine Tailwind with custom CSS backgrounds:</p>
+        <div class="custom-bg mt-4 p-6 rounded-lg text-gray-800">
+          This uses a custom gradient background defined in CSS
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Sizing with w- and h- classes -->
+    <section class="mb-12 p-8 bg-white rounded-lg shadow-md">
+      <h2 class="text-2xl font-bold text-gray-800 mb-6">2. Element Sizing</h2>
+      <p class="text-gray-600 mb-4">
+        Tailwind uses a rem-based sizing system where each unit represents 0.25rem (4px by default).
+      </p>
+      
+      <div class="space-y-4">
+        <div class="flex items-center gap-4">
+          <div class="w-8 h-8 bg-red-400 rounded"></div>
+          <span>w-8 h-8 (8×4 = 32px)</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 bg-green-400 rounded"></div>
+          <span>w-12 h-12 (12×4 = 48px)</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="w-16 h-16 bg-blue-400 rounded"></div>
+          <span>w-16 h-16 (16×4 = 64px)</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="w-24 h-24 bg-purple-400 rounded"></div>
+          <span>w-24 h-24 (24×4 = 96px)</span>
+        </div>
+      </div>
+      
+      <div class="mt-8">
+        <h3 class="text-xl font-medium mb-3">Percentage Widths</h3>
+        <div class="bg-gray-200 h-8 rounded-full overflow-hidden">
+          <div class="bg-yellow-500 h-8 w-1/4 rounded-full"></div>
+        </div>
+        <div class="bg-gray-200 h-8 mt-2 rounded-full overflow-hidden">
+          <div class="bg-yellow-500 h-8 w-1/2 rounded-full"></div>
+        </div>
+        <div class="bg-gray-200 h-8 mt-2 rounded-full overflow-hidden">
+          <div class="bg-yellow-500 h-8 w-3/4 rounded-full"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Padding and Margins -->
+    <section class="mb-12 p-8 bg-white rounded-lg shadow-md">
+      <h2 class="text-2xl font-bold text-gray-800 mb-6">3. Padding and Margins</h2>
+      
+      <div class="space-y-6">
+        <div class="border border-gray-300 rounded-lg p-4">
+          <h3 class="text-lg font-medium mb-2">Padding</h3>
+          <div class="bg-blue-100 p-2">p-2 (0.5rem)</div>
+          <div class="bg-blue-100 p-4 mt-2">p-4 (1rem)</div>
+          <div class="bg-blue-100 p-8 mt-2">p-8 (2rem)</div>
+        </div>
+        
+        <div class="border border-gray-300 rounded-lg p-4">
+          <h3 class="text-lg font-medium mb-2">Directional Padding</h3>
+          <div class="bg-green-100 pt-4">pt-4 (padding-top)</div>
+          <div class="bg-green-100 pr-4 mt-2">pr-4 (padding-right)</div>
+          <div class="bg-green-100 pb-4 mt-2">pb-4 (padding-bottom)</div>
+          <div class="bg-green-100 pl-4 mt-2">pl-4 (padding-left)</div>
+          <div class="bg-green-100 px-4 py-2 mt-2">px-4 py-2 (horizontal & vertical)</div>
+        </div>
+        
+        <div class="border border-gray-300 rounded-lg p-4">
+          <h3 class="text-lg font-medium mb-2">Margins</h3>
+          <div class="bg-red-100 m-2">m-2 (margin all sides)</div>
+          <div class="bg-red-100 mx-auto mt-4 w-1/2">mx-auto (horizontal centering)</div>
+          <div class="bg-red-100 mt-8">mt-8 (margin-top 2rem)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Text Styling -->
+    <section class="mb-12 p-8 bg-white rounded-lg shadow-md">
+      <h2 class="text-2xl font-bold text-gray-800 mb-6">4. Text Styling</h2>
+      
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-lg font-medium mb-2">Font Size</h3>
+          <p class="text-xs">text-xs (0.75rem)</p>
+          <p class="text-sm">text-sm (0.875rem)</p>
+          <p class="text-base">text-base (1rem)</p>
+          <p class="text-lg">text-lg (1.125rem)</p>
+          <p class="text-xl">text-xl (1.25rem)</p>
+          <p class="text-2xl">text-2xl (1.5rem)</p>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-medium mb-2">Font Weight</h3>
+          <p class="font-light">font-light (300)</p>
+          <p class="font-normal">font-normal (400)</p>
+          <p class="font-medium">font-medium (500)</p>
+          <p class="font-semibold">font-semibold (600)</p>
+          <p class="font-bold">font-bold (700)</p>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-medium mb-2">Text Transform</h3>
+          <p class="uppercase">uppercase text</p>
+          <p class="lowercase">LOWERCASE TEXT</p>
+          <p class="capitalize">capitalized text</p>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-medium mb-2">Text Alignment</h3>
+          <p class="text-left">Left aligned text</p>
+          <p class="text-center">Center aligned text</p>
+          <p class="text-right">Right aligned text</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Borders -->
+    <section class="mb-12 p-8 bg-white rounded-lg shadow-md">
+      <h2 class="text-2xl font-bold text-gray-800 mb-6">5. Borders</h2>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="text-lg font-medium mb-2">Border Width</h3>
+          <div class="border border-gray-400 p-4 mb-2">border (1px)</div>
+          <div class="border-2 border-gray-400 p-4 mb-2">border-2 (2px)</div>
+          <div class="border-4 border-gray-400 p-4">border-4 (4px)</div>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-medium mb-2">Border Radius</h3>
+          <div class="border border-gray-400 p-4 mb-2 rounded-none">rounded-none</div>
+          <div class="border border-gray-400 p-4 mb-2 rounded">rounded (default)</div>
+          <div class="border border-gray-400 p-4 mb-2 rounded-lg">rounded-lg</div>
+          <div class="border border-gray-400 p-4 rounded-full w-24 h-24 flex items-center justify-center">rounded-full</div>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-medium mb-2">Border Colors</h3>
+          <div class="border border-red-500 p-4 mb-2">border-red-500</div>
+          <div class="border border-green-500 p-4 mb-2">border-green-500</div>
+          <div class="border border-blue-500 p-4">border-blue-500</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Display Modes -->
+    <section class="mb-12 p-8 bg-white rounded-lg shadow-md">
+      <h2 class="text-2xl font-bold text-gray-800 mb-6">6. Display Modes</h2>
+      
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-lg font-medium mb-2">Block Display</h3>
+          <div class="bg-blue-200 p-2 inline">inline div</div>
+          <div class="bg-blue-200 p-2 inline">inline div</div>
+          <div class="bg-blue-200 p-2 block mt-2">block div</div>
+          <div class="bg-blue-200 p-2 block mt-2">block div</div>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-medium mb-2">Flexbox</h3>
+          <div class="flex gap-4">
+            <div class="bg-green-200 p-4">Flex Item 1</div>
+            <div class="bg-green-200 p-4">Flex Item 2</div>
+            <div class="bg-green-200 p-4">Flex Item 3</div>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-medium mb-2">Grid</h3>
+          <div class="grid grid-cols-3 gap-4">
+            <div class="bg-purple-200 p-4">Grid Item 1</div>
+            <div class="bg-purple-200 p-4">Grid Item 2</div>
+            <div class="bg-purple-200 p-4">Grid Item 3</div>
+            <div class="bg-purple-200 p-4">Grid Item 4</div>
+            <div class="bg-purple-200 p-4">Grid Item 5</div>
+            <div class="bg-purple-200 p-4">Grid Item 6</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Flexbox -->
+    <section class="mb-12 p-8 bg-white rounded-lg shadow-md">
+      <h2 class="text-2xl font-bold text-gray-800 mb-6">7. Flexbox</h2>
+      
+      <div class="space-y-8">
+        <div>
+          <h3 class="text-lg font-medium mb-2">Flex Direction</h3>
+          <div class="flex flex-row gap-2 mb-4">
+            <div class="bg-yellow-200 p-2">Item 1</div>
+            <div class="bg-yellow-200 p-2">Item 2</div>
+            <div class="bg-yellow-200 p-2">Item 3</div>
+          </div>
+          <div class="flex flex-col gap-2">
+            <div class="bg-yellow-200 p-2">Item 1</div>
+            <div class="bg-yellow-200 p-2">Item 2</div>
+            <div class="bg-yellow-200 p-2">Item 3</div>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-medium mb-2">Justify Content</h3>
+          <div class="flex justify-start gap-2 mb-2 bg-gray-200 p-2">
+            <div class="bg-red-200 p-2">Item</div>
+            <div class="bg-red-200 p-2">Item</div>
+          </div>
+          <div class="flex justify-center gap-2 mb-2 bg-gray-200 p-2">
+            <div class="bg-red-200 p-2">Item</div>
+            <div class="bg-red-200 p-2">Item</div>
+          </div>
+          <div class="flex justify-end gap-2 mb-2 bg-gray-200 p-2">
+            <div class="bg-red-200 p-2">Item</div>
+            <div class="bg-red-200 p-2">Item</div>
+          </div>
+          <div class="flex justify-between gap-2 bg-gray-200 p-2">
+            <div class="bg-red-200 p-2">Item</div>
+            <div class="bg-red-200 p-2">Item</div>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-medium mb-2">Align Items</h3>
+          <div class="flex items-start gap-2 h-24 mb-2 bg-gray-200 p-2">
+            <div class="bg-blue-200 p-2">Start</div>
+            <div class="bg-blue-200 p-2">Start</div>
+          </div>
+          <div class="flex items-center gap-2 h-24 mb-2 bg-gray-200 p-2">
+            <div class="bg-blue-200 p-2">Center</div>
+            <div class="bg-blue-200 p-2">Center</div>
+          </div>
+          <div class="flex items-end gap-2 h-24 bg-gray-200 p-2">
+            <div class="bg-blue-200 p-2">End</div>
+            <div class="bg-blue-200 p-2">End</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Responsive Design -->
+    <section class="mb-12 p-8 bg-white rounded-lg shadow-md">
+      <h2 class="text-2xl font-bold text-gray-800 mb-6">8. Responsive Design</h2>
+      
+      <div class="space-y-6">
+        <p class="text-gray-600">
+          Tailwind uses a mobile-first breakpoint system. The

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tailwind CSS Customization - Complete Guide</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        // 1. Extending the default theme
+        extend: {
+          colors: {
+            primary: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              200: '#bae6fd',
+              300: '#7dd3fc',
+              400: '#38bdf8',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e',
+            },
+            secondary: {
+              50: '#f5f3ff',
+              100: '#ede9fe',
+              200: '#ddd6fe',
+              300: '#c4b5fd',
+              400: '#a78bfa',
+              500: '#8b5cf6',
+              600: '#7c3aed',
+              700: '#6d28d9',
+              800: '#5b21b6',
+              900: '#4c1d95',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['Fira Code', 'monospace'],
+          },
+          spacing: {
+            '128': '32rem',
+            '144': '36rem',
+          },
+        },
+        
+        // 2. Overriding the default theme
+        screens: {
+          'xs': '480px',
+          'sm': '640px',
+          'md': '768px',
+          'lg': '1024px',
+          'xl': '1280px',
+          '2xl': '1536px',
+        },
+        
+        // 3. Custom container settings
+        container: {
+          center: true,
+          padding: {
+            DEFAULT: '1rem',
+            sm: '2rem',
+            lg: '4rem',
+            xl: '5rem',
+          },
+        },
+      },
+      
+      // 4. Adding custom utilities
+      plugins: [
+        function({ addUtilities }) {
+          addUtilities({
+            '.scroll-smooth': {
+              'scroll-behavior': 'smooth',
+            },
+            '.text-shadow': {
+              'text-shadow': '2px 2px 4px rgba(0, 0, 0, 0.3)',
+            },
+            '.text-shadow-none': {
+              'text-shadow': 'none',
+            },
+          })
+        }
+      ],
+      
+      // 5. Enabling variants
+      variants: {
+        extend: {
+          backgroundColor: ['active'],
+          textColor: ['active'],
+          opacity: ['disabled'],
+        },
+      },
+      
+      // 6. Customizing the base styles
+      corePlugins: {
+        preflight: true,
+      }
+    }
+  </script>
+  <style>
+    /* Loading custom fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+    
+    /* Custom CSS that works with Tailwind */
+    .custom-bg-pattern {
+      background-image: radial-gradient(circle, #e0f2fe 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 font-sans">
+  <div class="container mx-auto px-4 py-8">
+    <!-- Header Section -->
+    <header class="mb-12 text-center">
+      <h1 class="text-4xl font-bold text-primary-700 mb-4 text-shadow">
+        Tailwind CSS Customization
+      </h1>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        All customization techniques in one document - colors, fonts, spacing, variants, and more.
+      </p>
+    </header>
+
+    <!-- 1. Custom Colors -->
+    <section class="mb-12 p-8 bg-white rounded-xl shadow-lg">
+      <h2 class="text-2xl font-semibold text-primary-800 mb-6">1. Custom Colors</h2>
+      
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-8">
+        <div class="bg-primary-50 p-4 rounded-lg text-center">50</div>
+        <div class="bg-primary-100 p-4 rounded-lg text-center">100</div>
+        <div class="bg-primary-200 p-4 rounded-lg text-center">200</div>
+        <div class="bg-primary-300 p-4 rounded-lg text-center">300</div>
+        <div class="bg-primary-400 p-4 rounded-lg text-center">400</div>
+        <div class="bg-primary-500 p-4 rounded-lg text-center text-white">500</div>
+        <div class="bg-primary-600 p-4 rounded-lg text-center text-white">600</div>
+        <div class="bg-primary-700 p-4 rounded-lg text-center text-white">700</div>
+        <div class="bg-primary-800 p-4 rounded-lg text-center text-white">800</div>
+        <div class="bg-primary-900 p-4 rounded-lg text-center text-white">900</div>
+      </div>
+      
+      <div class="p-6 bg-secondary-100 rounded-lg">
+        <h3 class="text-xl font-medium text-secondary-800 mb-3">Secondary Color Palette</h3>
+        <p class="text-secondary-700">This section uses the custom secondary color palette.</p>
+        <button class="mt-4 px-6 py-2 bg-secondary-600 text-white rounded-lg hover:bg-secondary-700 active:bg-secondary-800">
+          Secondary Button
+        </button>
+      </div>
+    </section>
+
+    <!-- 2. Custom Fonts -->
+    <section class="mb-12 p-8 bg-white rounded-xl shadow-lg">
+      <h2 class="text-2xl font-semibold text-primary-800 mb-6">2. Custom Fonts</h2>
+      
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-lg font-medium mb-2">Sans-serif (Inter)</h3>
+          <p class="text-gray-700">
+            The quick brown fox jumps over the lazy dog. 1234567890
+          </p>
+        </div>
+        
+        <div class="font-mono bg-gray-100 p-4 rounded-lg">
+          <h3 class="text-lg font-medium mb-2">Monospace (Fira Code)</h3>
+          <p>
+            const greet = (name) => {<br>
+            &nbsp;&nbsp;return `Hello ${name}!`;<br>
+            }<br>
+            console.log(greet('World'));
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Custom Spacing -->
+    <section class="mb-12 p-8 bg-white rounded-xl shadow-lg">
+      <h2 class="text-2xl font-semibold text-primary-800 mb-6">3. Custom Spacing</h2>
+      
+      <div class="space-y-8">
+        <div>
+          <h3 class="text-lg font-medium mb-3">Extended Spacing Scale</h3>
+          <div class="flex items-center gap-4">
+            <div class="bg-primary-100 w-32 h-32 flex items-center justify-center rounded-lg">
+              <span>32rem (128)</span>
+            </div>
+            <div class="bg-primary-200 w-36 h-36 flex items-center justify-center rounded-lg">
+              <span>36rem (144)</span>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <h3 class="text-lg font-medium mb-3">Responsive Container Padding</h3>
+          <div class="border-2 border-dashed border-primary-300 p-4 rounded-lg">
+            <p>Container padding changes at different breakpoints:</p>
+            <ul class="list-disc pl-5 mt-2">
+              <li>Default: 1rem</li>
+              <li>sm (640px): 2rem</li>
+              <li>lg (1024px): 4rem</li>
+              <li>xl (1280px): 5rem</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Custom Breakpoints -->
+    <section class="mb-12 p-8 bg-white rounded-xl shadow-lg">
+      <h2 class="text-2xl font-semibold text-primary-800 mb-6">4. Custom Breakpoints</h2>
+      
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div class="bg-gray-100 p-4 rounded-lg">
+          <div class="font-medium">xs</div>
+          <div class="text-sm text-gray-600">≥480px</div>
+        </div>
+        <div class="bg-gray-100 p-4 rounded-lg">
+          <div class="font-medium">sm</div>
+          <div class="text-sm text-gray-600">≥640px</div>
+        </div>
+        <div class="bg-gray-100 p-4 rounded-lg">
+          <div class="font-medium">md</div>
+          <div class="text-sm text-gray-600">≥768px</div>
+        </div>
+        <div class="bg-gray-100 p-4 rounded-lg">
+          <div class="font-medium">lg</div>
+          <div class="text-sm text-gray-600">≥1024px</div>
+        </div>
+        <div class="bg-gray-100 p-4 rounded-lg">
+          <div class="font-medium">xl</div>
+          <div class="text-sm text-gray-600">≥1280px</div>
+        </div>
+        <div class="bg-gray-100 p-4 rounded-lg">
+          <div class="font-medium">2xl</div>
+          <div class="text-sm text-gray-600">≥1536px</div>
+        </div>
+      </div>
+      
+      <div class="mt-8 p-6 bg-primary-50 rounded-lg">
+        <h3 class="text-lg font-medium mb-3">Responsive Test</h3>
+        <div class="space-y-2">
+          <div class="block xs:hidden bg-red-200 p-2 rounded text-center">
+            Visible only on extra small screens (&lt;480px)
+          </div>
+          <div class="hidden xs:block sm:hidden bg-blue-200 p-2 rounded text-center">
+            Visible only on xs screens (480-639px)
+          </div>
+          <div class="hidden sm:block md:hidden bg-green-200 p-2 rounded text-center">
+            Visible only on sm screens (640-767px)
+          </div>
+          <div class="hidden md:block bg-yellow-200 p-2 rounded text-center">
+            Visible on md screens and up (≥768px)
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Custom Utilities -->
+    <section class="mb-12 p-8 bg-white rounded-xl shadow-lg">
+      <h2 class="text-2xl font-semibold text-primary-800 mb-6">5. Custom Utilities</h2>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="p-6 bg-gray-100 rounded-lg">
+          <h3 class="text-lg font-medium mb-3">Text Shadow</h3>
+          <p class="text-2xl text-shadow text-primary-700">
+            This text has a custom shadow
+          </p>
+          <div class="mt-4 p-4 bg-gray-200 rounded">
+            <code class="text-sm">
+              .text-shadow { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); }
+            </code>
+          </div>
+        </div>
+        
+        <div class="p-6 bg-gray-100 rounded-lg">
+          <h3 class="text-lg font-medium mb-3">Smooth Scrolling</h3>
+          <div class="h-40 overflow-y-auto scroll-smooth border border-gray-300 p-2">
+            <div class="space-y-2">
+              <div class="p-2 bg-primary-100">Item 1</div>
+              <div class="p-2 bg-primary-100">Item 2</div>
+              <div class="p-2 bg-primary-100">Item 3</div>
+              <div class="p-2 bg-primary-100">Item 4</div>
+              <div class="p-2 bg-primary-100">Item 5</div>
+              <div class="p-2 bg-primary-100">Item 6</div>
+            </div>
+          </div>
+          <div class="mt-4 p-4 bg-gray-200 rounded">
+            <code class="text-sm">
+              .scroll-smooth { scroll-behavior: smooth; }
+            </code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Custom Variants -->
+    <section class="mb-12 p-8 bg-white rounded-xl shadow-lg">
+      <h2 class="text-2xl font-semibold text-primary-800 mb-6">6. Custom Variants</h2>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="p-6 bg-gray-100 rounded-lg">
+          <h3 class="text-lg font-medium mb-3">Active State</h3>
+          <button class="px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 active:bg-primary-800">
+            Press and hold
+          </button>
+          <div class="mt-4 p-4 bg-gray-200 rounded">
+            <code class="text-sm">
+              variants: {<br>
+              &nbsp;&nbsp;extend: {<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;backgroundColor: ['active'],<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;textColor: ['active']<br>
+              &nbsp;&nbsp;}<br>
+              }
+            </code>
+          </div>
+        </div>
+        
+        <div class="p-6 bg-gray-100 rounded-lg">
+          <h3 class="text-lg font-medium mb-3">Disabled State</h3>
+          <button class="px-6 py-3 bg-primary-600 text-white rounded-lg opacity-100 disabled:opacity-50" disabled>
+            Disabled Button
+          </button>
+          <div class="mt-4 p-4 bg-gray-200 rounded">
+            <code class="text-sm">
+              variants: {<br>
+              &nbsp;&nbsp;extend: {<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;opacity: ['disabled']<br>
+              &nbsp;&nbsp;}<br>
+              }
+            </code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Combining with Custom CSS -->
+    <section class="mb-12 p-8 bg-white rounded-xl shadow-lg custom-bg-pattern">
+      <h2 class="text-2xl font-semibold text-primary-800 mb-6">7. Combining with Custom CSS</h2>
+      
+      <div class="p-6 bg-white bg-opacity-90 rounded-lg border border-gray-200">
+        <p class="mb-4">This section has a custom background pattern defined in regular CSS:</p>
+        <div class="p-4 bg-gray-100 rounded">
+          <code class="text-sm">
+            .custom-bg-pattern {<br>
+            &nbsp;&nbsp;background-image: radial-gradient(circle, #e0f2fe 1px, transparent 1px);<br>
+            &nbsp;&nbsp;background-size: 20px 20px;<br>
+            }
+          </code>
+        </div>
+        <p class="mt-4">You can combine Tailwind's utility classes with custom CSS when needed.</p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="p-8 bg-primary-900 text-white rounded-xl text-center">
+      <h2 class="text-2xl font-bold mb-4">Tailwind CSS Customization</h2>
+      <p class="max-w-2xl mx-auto">This document demonstrates all major customization techniques including colors, fonts, spacing, breakpoints, utilities, variants, and combining with custom CSS.</p>
+    </footer>
+  </div>
+</body>
+</html>

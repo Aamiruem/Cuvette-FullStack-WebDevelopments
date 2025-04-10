@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Todo List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="p-4">
+
+    <form id="new-task-form" class="mb-3">
+        <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Enter the task you want to do" id="new-task-input" />
+        </div>
+        <input type="submit" class="btn btn-success" id="new-task-submit" value="Add Task" />
+    </form>
+
+    <div class="task-list">
+        <h1 class="mt-5 mb-3">Tasks</h1>
+        <div class="tasks" id="tasks-container">
+            <!-- Tasks will appear here -->
+        </div>
+    </div>
+
+    <!-- <input
+  type="submit"
+  class="btn btn-success w-100"
+  id="new-task-submit"
+  value="➕ Add Task"
+/>
+
+
+    <button class="edit btn btn-warning me-2" title="Edit or Save this task">
+  ✏️ Edit
+</button>
+<button class="delete btn btn-danger" title="Delete this task">
+  🗑️ Delete
+</button> -->
+
+
+    <script>
+        const taskForm = document.getElementById("new-task-form");
+        const taskInput = document.getElementById("new-task-input");
+        const taskContainer = document.getElementById("tasks-container");
+
+        taskForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const taskValue = taskInput.value.trim();
+            if (!taskValue) return;
+
+            // Create task container
+            const taskDiv = document.createElement("div");
+            taskDiv.className = "task mb-3 p-3 border rounded bg-light";
+
+            const contentDiv = document.createElement("div");
+            contentDiv.className = "content mb-2";
+
+            const input = document.createElement("input");
+            input.type = "text";
+            input.value = taskValue;
+            input.className = "form-control";
+            input.setAttribute("readonly", true);
+
+            contentDiv.appendChild(input);
+            alert("Please enter task")
+
+            // Create actions
+            const actionsDiv = document.createElement("div");
+            actionsDiv.className = "actions mt-2";
+
+            const editButton = document.createElement("button");
+            editButton.className = "edit btn btn-warning me-2";
+            editButton.innerText = "Edit";
+
+            const deleteButton = document.createElement("button");
+            deleteButton.className = "delete btn btn-danger";
+            deleteButton.innerText = "Delete";
+
+            actionsDiv.appendChild(editButton);
+            actionsDiv.appendChild(deleteButton);
+
+            // Add to task div
+            taskDiv.appendChild(contentDiv);
+            taskDiv.appendChild(actionsDiv);
+
+            // Append to task container
+            taskContainer.appendChild(taskDiv);
+
+            // Clear input
+            taskInput.value = "";
+
+            // Edit button functionality
+            editButton.addEventListener("click", () => {
+                if (editButton.innerText.toLowerCase() === "edit") {
+                    input.removeAttribute("readonly");
+                    input.focus();
+                    editButton.innerText = "Save";
+                } else {
+                    input.setAttribute("readonly", true);
+                    editButton.innerText = "Edit";
+                }
+            });
+
+            // Delete button functionality
+            deleteButton.addEventListener("click", () => {
+                taskContainer.removeChild(taskDiv);
+            });
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSFAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+        <script src="app.js"></script>
+</body>
+
+</html>

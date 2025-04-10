@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aamir Hussain Azad | Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        },
+                        dark: {
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-in-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        
+        /* Fixed background solution */
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            z-index: -1;
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Better image rendering */
+        img {
+            image-rendering: -webkit-optimize-contrast;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Header Section -->
+    <header class="bg-dark-800 text-white fixed w-full top-0 left-0 z-50 shadow-lg">
+        <div class="max-w-screen-xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-xl font-bold">Aamir Azad</div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:text-gray-300 transition duration-300">Home</a>
+                <a href="#about" class="hover:text-gray-300 transition duration-300">About Me</a>
+                <a href="#projects" class="hover:text-gray-300 transition duration-300">Projects</a>
+                <a href="#contact" class="hover:text-gray-300 transition duration-300">Contact</a>
+            </nav>
+            <div class="md:hidden flex items-center">
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-dark-900 px-4 pb-4">
+            <a href="#home" class="block py-2 hover:text-gray-300 transition duration-300">Home</a>
+            <a href="#about" class="block py-2 hover:text-gray-300 transition duration-300">About Me</a>
+            <a href="#projects" class="block py-2 hover:text-gray-300 transition duration-300">Projects</a>
+            <a href="#contact" class="block py-2 hover:text-gray-300 transition duration-300">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section with fixed background -->
+    <section id="home" class="hero-section flex items-center justify-center text-center text-white relative">
+        <div class="hero-bg"></div>
+        <div class="animate-fade-in z-10 px-4">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Hello, I'm <span class="text-primary-600">Aamir Hussain Azad</span></h1>
+            <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">Full Stack Developer specializing in modern web technologies and creating exceptional digital experiences.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#projects" class="bg-primary-600 px-6 py-3 rounded-lg hover:bg-primary-700 transition duration-300 transform hover:scale-105">
+                    View My Work
+                </a>
+                <a href="#contact" class="border-2 border-white px-6 py-3 rounded-lg hover:bg-white hover:text-dark-900 transition duration-300">
+                    Contact Me
+                </a>
+            </div>
+        </div>
+        <a href="#about" class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
+            <i class="fas fa-chevron-down text-2xl"></i>
+        </a>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-20 px-4 bg-gray-200">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12">About <span class="text-primary-600">Me</span></h2>
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/3 flex justify-center">
+                    <img src="aamir.jpg" alt="Aamir Hussain Azad" 
+                         class="rounded-full w-64 h-64 object-cover border-4 border-white shadow-xl hover:shadow-2xl transition duration-300">
+                </div>
+                <div class="md:w-2/3">
+                    <p class="text-lg mb-6">I'm a passionate full stack developer with 5 years of experience building web applications. I specialize in JavaScript technologies across the whole stack (React.js, Node.js, Express, MongoDB).</p>
+                    
+                    <div class="mb-6">
+                        <h3 class="text-xl font-semibold mb-3">Skills & Technologies</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-primary-600 text-white px-3 py-1 rounded-full text-sm hover:bg-primary-700 transition">JavaScript</span>
+                            <span class="bg-primary-600 text-white px-3 py-1 rounded-full text-sm hover:bg-primary-700 transition">React</span>
+                            <span class="bg-primary-600 text-white px-3 py-1 rounded-full text-sm hover:bg-primary-700 transition">Node.js</span>
+                            <span class="bg-primary-600 text-white px-3 py-1 rounded-full text-sm hover:bg-primary-700 transition">Express</span>
+                            <span class="bg-primary-600 text-white px-3 py-1 rounded-full text-sm hover:bg-primary-700 transition">MongoDB</span>
+                            <span class="bg-primary-600 text-white px-3 py-1 rounded-full text-sm hover:bg-primary-700 transition">HTML/CSS</span>
+                            <span class="bg-primary-600 text-white px-3 py-1 rounded-full text-sm hover:bg-primary-700 transition">Tailwind CSS</span>
+                            <span class="bg-primary-600 text-white px-3 py-1 rounded-full text-sm hover:bg-primary-700 transition">Git</span>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold mb-3">Experience</h3>
+                        <div class="space-y-4">
+                            <div class="bg-white p-4 rounded-lg shadow hover:shadow-md transition">
+                                <h4 class="font-medium">Senior Developer at TechCorp</h4>
+                                <p class="text-sm text-gray-600">2020 - Present</p>
+                                <p class="text-gray-700 mt-1">Leading development teams and architecting scalable web applications.</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow hover:shadow-md transition">
+                                <h4 class="font-medium">Web Developer at Digital Solutions</h4>
+                                <p class="text-sm text-gray-600">2018 - 2020</p>
+                                <p class="text-gray-700 mt-1">Developed and maintained client websites and web applications.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-4">
+        <div class="max-w-screen-xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12">My <span class="text-primary-600">Projects</span></h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="E-commerce Platform" class="w-full h-48 object-cover hover:opacity-90 transition">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">E-commerce Platform</h3>
+                        <p class="text-gray-600 mb-4">A full-featured online store with product listings, shopping cart, and secure checkout.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-200 px-2 py-1 rounded text-xs">React</span>
+                            <span class="bg-gray-200 px-2 py-1 rounded text-xs">Node.js</span>
+                            <span class="bg-gray-200 px-2 py-1 rounded text-xs">MongoDB</span>
+                        </div>
+                        <a href="#" class="text-primary-600 font-medium hover:underline flex items-center group">
+                            View Project <i class="fas fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" 
+                         alt="Task Management App" class="w-full h-48 object-cover hover:opacity-90 transition">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Task Management App</h3>
+                        <p class="text-gray-600 mb-4">A productivity application for managing tasks with drag-and-drop functionality and team collaboration.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-200 px-2 py-1 rounded text-xs">Vue.js</span>
+                            <span class="bg-gray-200 px-2 py-1 rounded text-xs">Firebase</span>
+                            <span class="bg-gray-200 px-2 py-1 rounded text-xs">Tailwind</span>
+                        </div>
+                        <a href="#" class="text-primary-600 font-medium hover:underline flex items-center group">
+                            View Project <i class="fas fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="Developer Portfolio" class="w-full h-48 object-cover hover:opacity-90 transition">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Developer Portfolio</h3>
+                        <p class="text-gray-600 mb-4">A responsive portfolio website built with modern web technologies to showcase developer work.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-200 px-2 py-1 rounded text-xs">HTML5</span>
+                            <span class="bg-gray-200 px-2 py-1 rounded text-xs">CSS3</span>
+                            <span class="bg-gray-200 px-2 py-1 rounded text-xs">JavaScript</span>
+                        </div>
+                        <a href="#" class="text-primary-600 font-medium hover:underline flex items-center group">
+                            View Project <i class="fas fa-arrow-right ml-2 group-hover:ml-3 transition-all"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 bg-dark-800 text-white">
+        <div class="max-w-screen-md mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12">Get In <span class="text-primary-600">Touch</span></h2>
+            <form class="space-y-6">
+                <div>
+                    <label for="name" class="block mb-2">Your Name</label>
+                    <input type="text" id="name" 
+                           class="w-full p-3 bg-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600 transition">
+                </div>
+                <div>
+                    <label for="email" class="block mb-2">Your Email</label>
+                    <input type="email" id="email" 
+                           class="w-full p-3 bg-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600 transition">
+                </div>
+                <div>
+                    <label for="message" class="block mb-2">Your Message</label>
+                    <textarea id="message" rows="5" 
+                              class="w-full p-3 bg-dark-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600 transition"></textarea>
+                </div>
+                <button type="submit" 
+                        class="w-full py-3 bg-primary-600 rounded-lg hover:bg-primary-700 transition duration-300 transform hover:scale-[1.01]">
+                    Send Message
+                </button>
+            </form>
+            <div class="mt-12 text-center">
+                <h3 class="text-xl font-semibold mb-4">Or find me on</h3>
+                <div class="flex justify-center space-x-6">
+                    <a href="#" class="text-2xl hover:text-primary-600 transition duration-300 transform hover:scale-110">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="text-2xl hover:text-primary-600 transition duration-300 transform hover:scale-110">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="text-2xl hover:text-primary-600 transition duration-300 transform hover:scale-110">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-2xl hover:text-primary-600 transition duration-300 transform hover:scale-110">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-dark-900 text-white py-8 text-center">
+        <div class="max-w-screen-xl mx-auto px-4">
+            <p>&copy; 2023 Aamir Hussain Azad. All rights reserved.</p>
+            <div class
